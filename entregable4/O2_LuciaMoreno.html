@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <title>Desafío Observables 4.2 - Coderhouse</title>
+    <body>
+        <script type="module">
+            import { fromEvent } from 'https://dev.jspm.io/rxjs@6/_esm2015'
+            import { map, filter } from 'https://dev.jspm.io/rxjs@6/_esm2015/operators'
+           
+            const normalText = document.getElementById("normalText");
+            const reversedText = document.getElementById("reversedText");
+            const miObservable = fromEvent(normalText, "keyup");
+
+            // Me suscribo a un observable
+            console.log("Me suscribo");
+            const subscriber = miObservable.pipe(
+                map(event=>{
+                    let textValue =  event.target.value;
+                    if (textValue.toLowerCase()==="ERROROR") subscriber.error(`Se recibió ${textValue}`)
+                    else if (textValue.toLowerCase()==="COMPLETO") subscriber.complete()
+                    else return textValue.split("").reverse().join("");
+                })
+            ).subscribe({
+                next(mirrorText) {
+                    reversedText.innerText = mirrorText;
+                },
+                error(err) {
+                    console.log("ERROR!", err)
+                    resetContent(subscriber)
+                },
+                complete() {
+                    console.log("COMPLETO!")
+                    resetContent(subscriber);
+                }
+            })
+
+            setTimeout(()=>{
+                console.log("Timeout!");
+                resetContent(subscriber)
+            }, 30000)
+
+            function resetContent(subscriber){
+                reversedText.innerHTML = " ";
+                normalText.value = "";
+                normalText.disabled = true;
+                subscriber.unsubscribe();
+            }
+
+        </script>
+        <h1 style="font-family: sans-serif;">Desafío 4.2 - Observables</h1>
+        <h2 style="font-family: sans-serif;">Lucía Moreno</h2>
+        <input id="normalText" type="text"></input>
+        <span id="reversedText" ></span>
+    </body>
+
+</html>
