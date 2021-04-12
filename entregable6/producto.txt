@@ -1,0 +1,3 @@
+{"title":"Teclado","price":3448,"thumbnail":"https://tecladoschulos.com/wp-content/uploads/Teclado-dividido-en-dos-partes.jpg","id":1}
+{"title":"Silla","price":15000,"thumbnail":"https://www.perozzi.com.ar/16720-large_default/silla-gamer-mcb588bk.jpg","id":3}
+{"title":"Computadora Lenovo Thinkpad","price":250000,"thumbnail":"https://www.lenovo.com/medias/lenovo-laptop-thinkpad-t15p-15-subseries-hero.png?context=bWFzdGVyfHJvb3R8NTk5MTh8aW1hZ2UvcG5nfGg3ZS9oNWEvMTA5NTg3MjM5NzMxNTAucG5nfDY3YmMxMjg4NDI2NWFkZDE4ZjhlOWZhMWZlZGEzNzUwNTAxODlhZjVlMTZiOTMxNTdkNmYwNjdhYjY0ZjBlMmYhttps://images.footballfanatics.com/scuderia-ferrari/scuderia-ferrari-race-xtg-crew-sweatshirt-by-puma-black_ss4_p-12026947+u-sqzmkaobwp12wwvib45r+v-5a52b5a373364999b4d9c0dea5802cb6.jpg?_hv=1&w=900","id":4}
